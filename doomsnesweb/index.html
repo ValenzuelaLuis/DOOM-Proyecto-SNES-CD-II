@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DOOM SNES</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:
+    radial-gradient(circle at center,
+    #662200 0%,
+    #220000 35%,
+    #000000 100%);
+
+    font-family:Arial, Helvetica, sans-serif;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    repeating-linear-gradient(
+        0deg,
+        rgba(255,60,0,.02) 0px,
+        rgba(255,60,0,.02) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+
+    pointer-events:none;
+}
+
+.logo{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+}
+
+.logo img{
+
+    width:min(90%,500px);
+
+    filter:
+    drop-shadow(0 0 15px red)
+    drop-shadow(0 0 25px orange)
+    drop-shadow(0 0 40px red);
+}
+
+.emulator-frame{
+
+    width:95%;
+
+    margin:25px auto;
+
+    border:6px solid #555;
+
+    background:#111;
+
+    box-shadow:
+        0 0 30px rgba(255,0,0,.5),
+        inset 0 0 25px rgba(255,120,0,.2);
+}
+
+#game{
+
+    width:100%;
+    height:80vh;
+}
+
+.footer{
+
+    text-align:center;
+
+    color:#aaa;
+
+    padding:15px;
+
+    font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="logo">
+
+    <img src="img/doom-logo.png" alt="DOOM">
+
+</div>
+
+<div class="marquee">
+
+    <div class="marquee-track">
+
+        <div class="item-placeholder"></div>
+        <div class="item-placeholder"></div>
+        <div class="item-placeholder"></div>
+        <div class="item-placeholder"></div>
+        <div class="item-placeholder"></div>
+        <div class="item-placeholder"></div>
+        <div class="item-placeholder"></div>
+
+        <div class="item-placeholder"></div>
+        <div class="item-placeholder"></div>
+        <div class="item-placeholder"></div>
+        <div class="item-placeholder"></div>
+        <div class="item-placeholder"></div>
+        <div class="item-placeholder"></div>
+        <div class="item-placeholder"></div>
+
+    </div>
+
+</div>
+
+<div class="emulator-frame">
+
+    <div id="game"></div>
+
+</div>
+
+<div class="footer">
+
+    DOOM SNES • Powered by EmulatorJS
+
+</div>
+
+<script>
+
+EJS_player = "#game";
+
+EJS_core = "snes";
+
+EJS_pathtodata =
+"https://cdn.emulatorjs.org/stable/data/";
+
+EJS_gameUrl = "./DOOM (USA).sfc";
+
+</script>
+
+<script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
+
+</body>
+</html>
